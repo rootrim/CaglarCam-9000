@@ -12,7 +12,7 @@ def main():
 
     results = []
     for image in image_list:
-        print(f"Detecting faces in {image}")
+        print(f"Detecting vehicles in {image}")
         the_image = imread(image_path + image)
         faces = detectFaces(the_image, "models/makkuin.xml")
         result = drawFaces(the_image, faces)
