@@ -2,7 +2,7 @@ import os
 
 from cv2 import imread, imwrite
 
-from src.detect import detectFaces
+from src.detect import detect
 from src.utils import drawFaces
 
 
@@ -14,7 +14,7 @@ def main():
     for image in image_list:
         print(f"Detecting vehicles in {image}")
         the_image = imread(image_path + image)
-        faces = detectFaces(the_image, "models/makkuin.xml")
+        faces = detect(the_image, "models/makkuin.xml")
         result = drawFaces(the_image, faces)
         results.append((image, result))
 

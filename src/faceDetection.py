@@ -2,7 +2,7 @@ import os
 
 from cv2 import imread, imwrite
 
-from src.detect import detectFaces
+from src.detect import detect
 from src.utils import drawFaces
 
 
@@ -14,7 +14,7 @@ def main():
     for image in image_list:
         print(f"Detecting faces in {image}")
         the_image = imread(image_path + image)
-        faces = detectFaces(the_image, "models/haarcascade_frontalface_default.xml")
+        faces = detect(the_image, "models/haarcascade_frontalface_default.xml")
         result = drawFaces(the_image, faces)
         results.append((image, result))
 
